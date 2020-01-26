@@ -7,6 +7,13 @@ class TwitterMessage extends React.Component {
     this.state = {};
   }
 
+  renderRemainingCharCount() {
+    charCount => {
+      this.state.message.length;
+    };
+    this.props.maxChars;
+  }
+
   render() {
     return (
       <div>
@@ -18,6 +25,7 @@ class TwitterMessage extends React.Component {
           onChange={event => this.setState({ message: event.target.value })}
           value={this.state.message}
         />
+        <div>{this.renderRemainingCharCount}</div>
       </div>
     );
   }
