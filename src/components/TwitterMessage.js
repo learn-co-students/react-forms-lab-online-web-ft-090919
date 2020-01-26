@@ -15,7 +15,7 @@ class TwitterMessage extends React.Component {
           type="text"
           name="message"
           id="message"
-          onChange= {this.setState(prevstate => )}
+          onChange={event => this.setState({ message: event.target.value })}
           value={this.state.message}
         />
       </div>
