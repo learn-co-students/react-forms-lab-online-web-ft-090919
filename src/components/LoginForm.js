@@ -3,7 +3,7 @@ import React from "react";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-  
+
     this.state = {
       username: '',
       password: ''
@@ -15,7 +15,9 @@ class LoginForm extends React.Component {
     console.log('submitting')
     const name = this.state.username
     const password = this.state.password
-    console.log(password)
+
+    if(name && password)
+    this.props.handleLogin(this.state)
   }
 
   handleInputChange = (event) => {
@@ -26,7 +28,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} >
         <div>
           <label>
             Username
